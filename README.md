@@ -12,7 +12,10 @@ You can edit your files in replit.com. It's an online IDE that allows you to wri
 
 If you want to use replit:
 
-Here is the link: https://replit.com/@YumianCui/acc-query-rec-prototype \
+Go to https://replit.com/~, sign up or log in. \
+Go to ```My Repls```, (optional: create a new folder) and then click top right corner + icon to create a ```New Repl```. Choose your ```Template``` to be ```HTML, CSS, JS```, name your replit. \
+Once you are in, go ahead and follow the steps in *Branching* section: "Once you're in replit,..."
+
 Here is the tutorial: https://docs.replit.com/programming-ide/git-with-replit
 
 ---
@@ -28,27 +31,20 @@ git config --global user.email "jane@example.com"
 
 It is bothering so if you do use replit, better leave the page opened there and complete any edits in one sitting. 
 
-another downside is that every time you push your commits it will ask for your GitHub name and password (PAT), to stop it, you can follow the tutorial https://docs.replit.com/programming-ide/git-with-replit#pushing-without-typing-in-your-password-or-access-token; however, then anyone with this link can have access to our sensitive info. But to mitigate this issue, you may reduce the number of pushs.
+another thing is that every time you pull from origin or push your commits it will ask for your GitHub name and password (PAT), to stop it, you can follow the tutorial: [pushing-without-typing-in-your-password-or-access-token](https://docs.replit.com/programming-ide/git-with-replit#pushing-without-typing-in-your-password-or-access-token).
 
 ## Branching
 
-Once you're in replit, you open ```Shell```, and I believe you will see ```~/acc-query-rec-prototype$```, you can pick either options below:
-
-1. Go to left side bar click icon ```Version control```, and choose your branch from drop-down. Then if you go to ```Shell``` and enter ```git branch```, you will see your branch appearing. (I created your branch for you and then delete it from shell; it still shows up in the branch list which is annoying...anyway you can try step 1 first)
-2. ```git checkout -b <name you like>``` (```-b``` auto switch to that branch after creating it) 
-   
-do any edits, add, commit, and then 
-
-```git push -u origin <your branch>```
-
-**if you don't like replit**, ignore above and in your local you can do 
+Once you're in replit, you open ```Shell```, and I believe you will see ```~/acc-query-rec-prototype$```, you can do
 
 ```git clone https://github.com/Yumian-Cui/acc-query-rec-prototype.git``` \
 ```cd acc-query-rec-prototype``` \
-```git checkout -b <name you like>``` 
+```git checkout -b <name you like>``` (```-b``` auto switch to that branch after creating it)
 
 After adding and commting with comments, you push to your own branch
 
 ```git push -u origin <your branch>```
+
+**if you don't like replit**, I believe you can do the same steps in your local as above. 
 
 
