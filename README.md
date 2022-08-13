@@ -35,7 +35,7 @@ another thing is that every time you pull from origin or push your commits it wi
 
 ## Branching
 
-Once you're in replit, you open ```Shell```, and I believe you will see ```~/acc-query-rec-prototype$```, you can do
+Once you're in replit, you open ```Shell```, and I believe you will see ```~/<your replit name>$```, you can do
 
 ```git clone https://github.com/Yumian-Cui/acc-query-rec-prototype.git``` \
 ```cd acc-query-rec-prototype``` \
