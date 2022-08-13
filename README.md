@@ -1,1 +1,0 @@
-# acc-query-rec-prototype
