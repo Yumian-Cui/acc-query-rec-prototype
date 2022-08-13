@@ -8,14 +8,18 @@ I created a [google doc](https://docs.google.com/document/d/1A5L7aOEzU7iMtNzmz5n
 
 ## Replit
 
-You can edit your files in replit.com. It's an online IDE that allows you to write code and host our website in one place (click run and you will see rendered website instantly). It has shell integrated so you can do the terminal commands just like in your local. There are other alternatives. VS Code is a good option as well.
+You can edit your files in replit.com. It's an online IDE that allows you to write code and host our website in one place (click run and you will see rendered website instantly). It has shell integrated so you can do the terminal commands just like in your local. There are other alternatives. VS Code is a good option as well. You can switch between IDEs as you like. 
+
+If you want to use replit:
 
 Here is the link: https://replit.com/@YumianCui/acc-query-rec-prototype \
 Here is the tutorial: https://docs.replit.com/programming-ide/git-with-replit
 
 ---
 
-**Important**: one downside of replit is if you close (or refresh) your tab, it may ask you to reenter your email and name like this
+**Important**: 
+
+one downside of replit is if you close (or refresh) your tab, it may ask you to reenter your email and name like this
 
 ```
 git config --global user.name "Jane Doe"
@@ -24,7 +28,7 @@ git config --global user.email "jane@example.com"
 
 It is bothering so if you do use replit, better leave the page opened there and complete any edits in one sitting. 
 
-another really important downside (writing to this point, I feel like replit is not for teamwork, but still write those down, I may use it occasionally) is that every time you commit or push it will ask for your GitHub name and password (PAT), to stop it, you can follow the tutorial https://docs.replit.com/programming-ide/git-with-replit#pushing-without-typing-in-your-password-or-access-token; however, then anyone with this link can have access to our sensitive info.
+another downside is that every time you push your commits it will ask for your GitHub name and password (PAT), to stop it, you can follow the tutorial https://docs.replit.com/programming-ide/git-with-replit#pushing-without-typing-in-your-password-or-access-token; however, then anyone with this link can have access to our sensitive info. But to mitigate this issue, you may reduce the number of pushs.
 
 ## Branching
 
