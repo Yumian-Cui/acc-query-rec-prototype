@@ -47,8 +47,7 @@ Once you're in replit, you open ```Shell```, and you will see ```~/acc-query-rec
 
 1. ```git clone https://github.com/Yumian-Cui/acc-query-rec-prototype.git```
 2. ```cd acc-query-rec-prototype```
-3. ```git checkout -b <name you like>```   
-
+3. ```git checkout -b <name you like>``` 
 <br> The subsequent steps are same as pointed above, except now you will use git commands to add and commit edited file(s.)
 
 --- 
