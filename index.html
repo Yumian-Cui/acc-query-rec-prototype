@@ -1,23 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+  <head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prototype</title>
 
-<body>
-  Hello world 
-  <script src="script.js"></script>
+    <link rel="stylesheet" href="./query_style.css">
+  </head>
 
- <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
-</body>
+  <body>
+    <h1>Welcome to My Website</h1> 
+    <div class="wrapper">
+
+      <!-- Datatable section -->
+      <div class="main">
+        <table id="datatable" aria-hidden ="false" tabindex = 3></table>
+      </div>
+
+      <!-- Sidebar interation section -->
+      <div class="sidebar" >    
+        <!-- File input -->
+        <div class="file_input">
+          <input type="file" id="dataset" name="filename" aria-hidden ="false" tabindex = 1/>
+          <output id="warning_output"></output>
+          <button onclick="createTable()" aria-hidden ="false" tabindex = 2>Create</button>
+        </div>
+
+        <!-- Chatbot -->
+        <hr></hr>
+          <summary aria-hidden ="false" tabindex = 4>&nbsp Have a question? Ask by voice typing below.</summary>
+<!--           add -- aria-hidden ="false" tabindex = 0 -- to be readable? -->
+          <div class="chatbot"> 
+            
+            <div id="chat_header" class="chat_header"></div>
+            <div id="chat_body" class="chat_body" aria-hidden ="false" tabindex = 7></div>
+            
+            <div id="chat_input" class="chat_input">
+              <button onclick="voiceToText()" aria-hidden ="false" tabindex = 5>Click to voice typing</button>
+              <input type="text" id="chat_text_input" name="message" aria-hidden ="false" tabindex = 6>
+            </div>
+            
+          </div>
+        <!-- recommendations -->
+        <hr></hr>
+          <div class="recommendations">
+            
+            <div class="flex-child new-inquiries" aria-hidden ="false" tabindex = 0>
+              New Inquiries
+            </div>
+            
+            <div class="flex-child follow-ups" aria-hidden ="false" tabindex = 0>
+              Follow-Ups
+            </div>
+            
+          </div>
+      </div>
+        
+    </div>
+
+    <script src="./query_scripts.js"></script>
+  </body>
 
 </html>
