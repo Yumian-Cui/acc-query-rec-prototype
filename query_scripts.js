@@ -33,6 +33,8 @@ function parseResult(result) {
     return resultArray;
 }
 
+const dataTable = document.getElementById("datatable");
+
 function createTable() {
     var array = CSVARRAY;
     var content = "";
@@ -43,7 +45,36 @@ function createTable() {
         });
         content += "</tr>";
     });
-    document.getElementById("datatable").innerHTML = content;
+    dataTable.innerHTML = content;
+  
+    updateNewInquiries();
+}
+
+var niNum = 0;
+const niContainer = document.getElementsByClassName("flex-child new-inquiries");
+
+function createNewInquiry(text) {
+  let newInquiry = document.createElement("button");
+  let inquiryPos = document.createElement("p");
+  // newInquiry.innerText = "Find average of " + dataTable.rows[0].cells[3].innerHTML;
+  newInquiry.innerText = text;
+  newInquiry.setAttribute("id", `newInquiry${niNum}`);
+  newInquiry.setAttribute("aria-hidden", "false");
+  newInquiry.setAttribute("tableindex", "0");
+  newInquiry.setAttribute("onclick",`pushToChatbox("newInquiry${niNum}")`);
+  niContainer[0].appendChild(inquiryPos);
+  niContainer[0].appendChild(newInquiry);
+  niNum++;
+}
+
+function updateNewInquiries() {
+  // clear the default message
+  document.getElementById("default-new-inquiry").remove();
+
+  // add new inquiries
+  createNewInquiry("Find average of " + dataTable.rows[0].cells[3].innerHTML);
+  createNewInquiry("Return the County with the highest Economy score");
+  createNewInquiry("Sort by Public Safety ascending");
 }
 
 /* For processing messages */
@@ -136,4 +167,10 @@ function voiceToText() {
   }
 
   recorder.start();
+}
+
+//below is Cat's test code for semi-static suggestion buttons
+
+function pushToChatbox(val) {
+	inputField.value = document.getElementById(val).innerHTML;
 }
