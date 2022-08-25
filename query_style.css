@@ -1,4 +1,7 @@
-html,body { height:100%; }
+html,body { 
+	height:100%; 
+	font-family: Arial, sans-serif;
+}
 
 table, th, td {
   border: 1px solid black;
@@ -20,21 +23,21 @@ p {
 }
 
 .sidebar {
-  width: 35%;
+  width: 40%;
   height: 100%;
   position: fixed;
   overflow: auto;
   position: -webkit-sticky;
   position: sticky;
   top: 5%;
-  left: 60%;
-  right:10%;
+ /* left: 60%;
+  right:10%; */
 }
 
 .file_input {
 	border: 1px solid black;
 	border-radius: 10px;
-	padding:  10px;
+	padding:  8px;
 }
 
 .chatbot {
@@ -44,13 +47,13 @@ p {
 	padding:  10px;
 	border: 0.5px solid black;
 	border-radius: 10px;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
 }
 
 .chat_body {
 	background-color: whitesmoke;
 	border-radius: 10px;
-	display: inherit;
+	display: flex;
 	flex-direction: column;
 	overflow: scroll;
 	height: 200px;
@@ -86,7 +89,7 @@ p {
 }
 
 .main {
-  width: 65%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -96,7 +99,7 @@ p {
 /*   min-height:50vh; */
 /*   position: fixed;
   left:0px; */
-  height: 87vh;
+  height: 87vh; 
 }
 
 .wrapper {
@@ -105,8 +108,6 @@ p {
 }
 
 .recommendations {
-  border: 1px solid black;
-  border-radius: 10px;
 /*   padding: 205px; */
   display: flex;
 }
@@ -118,7 +119,12 @@ p {
     padding: 60px; */
   flex: 1; 
   border: 1px solid black;
-  height: 425px;
+  border-radius: 10px;
+  height: px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding:  5px;
 }
 
 .flex-child:first-child {

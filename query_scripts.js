@@ -2,6 +2,7 @@
 const fileInput = document.getElementById('dataset'); 
 const warning = document.getElementById('warning_output'); 
 var CSVARRAY;
+var content = "";
 
 fileInput.addEventListener('change', function() {
   var reader = new FileReader();
@@ -34,10 +35,10 @@ function parseResult(result) {
 }
 
 const dataTable = document.getElementById("datatable");
+var createdTable = false;
 
 function createTable() {
     var array = CSVARRAY;
-    var content = "";
     array.forEach(function(row) {
         content += "<tr>";
         row.forEach(function(cell) {
@@ -46,8 +47,20 @@ function createTable() {
         content += "</tr>";
     });
     dataTable.innerHTML = content;
-  
-    updateNewInquiries();
+
+    createdTable = true;
+    if (createdTable) updateNewInquiries();
+}
+
+function onOpen() {
+  if (content == "") {
+    botSpeech("Please upload a dataset first."); 
+    return;
+  } else {
+    const popup = window.open();
+    var html = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><meta http-equiv='X-UA-Compatible' content='ie=edge'><title>Datatable</title><style>table, th, td {border: 1px solid black;border-collapse: collapse;}</style></head><body><div class='main'><table id='datatable' aria-hidden ='false' tabindex = 3>" + content + "</table></div><script src='./query_scripts.js'></script></body></html>";
+    popup.document.body.innerHTML = html;
+  }
 }
 
 var niNum = 0;
@@ -56,7 +69,6 @@ const niContainer = document.getElementsByClassName("flex-child new-inquiries");
 function createNewInquiry(text) {
   let newInquiry = document.createElement("button");
   let inquiryPos = document.createElement("p");
-  // newInquiry.innerText = "Find average of " + dataTable.rows[0].cells[3].innerHTML;
   newInquiry.innerText = text;
   newInquiry.setAttribute("id", `newInquiry${niNum}`);
   newInquiry.setAttribute("aria-hidden", "false");
@@ -116,8 +128,9 @@ function botResponse(input) {
   return result;
 }
 
+const speech = new SpeechSynthesisUtterance();
+
 function botSpeech(input) {
-  const speech = new SpeechSynthesisUtterance();
   speech.text = input;
   speech.volume = 1;
   speech.rate = 1;
