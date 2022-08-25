@@ -44,6 +44,15 @@ function createTable() {
         content += "</tr>";
     });
     document.getElementById("datatable").innerHTML = content;
+	
+	populateQuestions();
+
+}
+
+function populateQuestions() {
+		var table = document.getElementById("datatable");
+		document.getElementById("sample_inquiry_button").innerHTML = "Sort by " + table.rows[0].cells[0].innerHTML + " ascending";
+		document.getElementById("sample_inquiry_button_2").innerHTML = "Find average of " + table.rows[0].cells[0].innerHTML;
 }
 
 /* For processing messages */
@@ -136,4 +145,13 @@ function voiceToText() {
   }
 
   recorder.start();
+}
+
+//below is Cat's test code for semi-static suggestion buttons
+
+//const suggestionButton = document.getElementById('sample_inquiry_button');
+
+function pushToChatbox(val)
+{
+	document.getElementById('chat_text_input').value = document.getElementById(val).innerHTML;
 }
