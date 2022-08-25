@@ -45,7 +45,7 @@ function createTable() {
     });
     document.getElementById("datatable").innerHTML = content;
 	
-	populateQuestions();
+//	populateQuestions();
 
 }
 
@@ -153,5 +153,8 @@ function voiceToText() {
 
 function pushToChatbox(val)
 {
-	document.getElementById('chat_text_input').value = document.getElementById(val).innerHTML;
+
+  //alert(val);
+	document.getElementById('chat_text_input').value = 
+  document.getElementById(val).innerHTML;
 }
