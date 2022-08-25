@@ -45,7 +45,7 @@ function createTable() {
     });
     document.getElementById("datatable").innerHTML = content;
 	
-//	populateQuestions();
+	//populateQuestions();
 
 }
 
