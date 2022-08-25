@@ -51,8 +51,8 @@ function createTable() {
 
 function populateQuestions() {
 		var table = document.getElementById("datatable");
-		document.getElementById("sample_inquiry_button").innerHTML = "Sort by " + table.rows[0].cells[0].innerHTML + " ascending";
-		document.getElementById("sample_inquiry_button_2").innerHTML = "Find average of " + table.rows[0].cells[0].innerHTML;
+		document.getElementById("sample_inquiry_button").innerHTML = "Find minimum of " + table.rows[0].cells[0].innerHTML;
+		document.getElementById("sample_inquiry_button_2").innerHTML = "Find maximum of " + table.rows[0].cells[0].innerHTML;
 }
 
 /* For processing messages */
@@ -155,6 +155,5 @@ function pushToChatbox(val)
 {
 
   //alert(val);
-	document.getElementById('chat_text_input').value = 
-  document.getElementById(val).innerHTML;
+	document.getElementById('chat_text_input').value = document.getElementById(val).innerHTML;
 }
