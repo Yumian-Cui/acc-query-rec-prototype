@@ -98,9 +98,24 @@ document.addEventListener("DOMContentLoaded", function() {
       let input = inputField.value; // store the value
       inputField.value = ""; // clear the text input
       outputEntry(input); // print out the output 
+      replaceQueryRecommendation(input);
     }
   });
 });
+
+function replaceQueryRecommendation(val) {
+  
+var buttons = document.querySelectorAll("button");
+  for (var i = 0;i<buttons.length;i++) {
+    if (buttons[i].innerHTML == val) {
+      buttons[i].remove();
+                  var randomCol = Math.floor(Math.random() * dataTable.rows[0].cells.length);
+
+  createNewInquiry("Find maximum in " + dataTable.rows[0].cells[randomCol].innerHTML);
+    }
+  }
+
+}
 
 function botResponse(input) {
   let text = input.toLowerCase().replace(/[^\w\s\d]/gi, "");
@@ -187,9 +202,10 @@ function voiceToText() {
 function pushToChatbox(val) {
 	inputField.value = document.getElementById(val).innerHTML;
 
-  document.getElementById(val).remove();
+  //replaceQueryRecommendation(val);
+  //document.getElementById(val).remove();
 
-  var randomCol = Math.floor(Math.random() * dataTable.rows[0].cells.length);
+ // var randomCol = Math.floor(Math.random() * dataTable.rows[0].cells.length);
 
-  createNewInquiry("Find maximum in " + dataTable.rows[0].cells[randomCol].innerHTML);
+//  createNewInquiry("Find maximum in " + dataTable.rows[0].cells[randomCol].innerHTML);
 }
