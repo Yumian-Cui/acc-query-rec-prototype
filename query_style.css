@@ -121,7 +121,7 @@ p {
   border: 1px solid black;
   border-radius: 10px;
   height: px;
-  display: flex;
+/*   display: flex; */
   flex-direction: column;
   overflow: auto;
   padding:  5px;

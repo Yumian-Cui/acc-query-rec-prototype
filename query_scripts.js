@@ -49,7 +49,10 @@ function createTable() {
     dataTable.innerHTML = content;
 
     createdTable = true;
-    if (createdTable) updateNewInquiries();
+    if (createdTable) {
+      updateNewInquiries();
+      document.getElementById("default-blank-table").remove();
+    }
 }
 
 function onOpen() {
@@ -98,9 +101,21 @@ document.addEventListener("DOMContentLoaded", function() {
       let input = inputField.value; // store the value
       inputField.value = ""; // clear the text input
       outputEntry(input); // print out the output 
+      replaceQueryRecommendation(input);
     }
   });
 });
+
+function replaceQueryRecommendation(val) {
+  var buttons = document.querySelectorAll("button");
+  for (var i = 0;i<buttons.length;i++) {
+    if (buttons[i].innerHTML == val) {
+      buttons[i].remove();
+      var randomCol = Math.floor(Math.random() * dataTable.rows[0].cells.length);
+      createNewInquiry("Find maximum in " + dataTable.rows[0].cells[randomCol].innerHTML);
+    }
+  }
+}
 
 function botResponse(input) {
   let text = input.toLowerCase().replace(/[^\w\s\d]/gi, "");
